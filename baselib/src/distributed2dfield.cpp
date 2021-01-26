@@ -11,7 +11,7 @@ using std::experimental::dynamic_extent;
 using std::experimental::mdspan;
 using std::experimental::subspan;
 
-static constexpr int COMM_TAG = 1;
+static constexpr int COMM_TAG = 1; 
 
 Distributed2DField::Distributed2DField( MPI_Comm comm, Shape2D dist_shape, Shape2D global_shape, Shape2D ghost_sizes, std::array<double, 2> delta_space )
 	: m_distribution( comm, dist_shape )
