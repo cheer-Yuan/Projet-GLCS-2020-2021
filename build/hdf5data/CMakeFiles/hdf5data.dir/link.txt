@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhdf5data.a CMakeFiles/hdf5data.dir/src/hdf5data.cpp.o
+/usr/bin/ranlib libhdf5data.a

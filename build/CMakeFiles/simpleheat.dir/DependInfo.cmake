@@ -21,6 +21,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../heatlib/include"
   "../simpleui/include"
   "../programoptions/include"
+  "../hdf5data/include"
+  "/usr/include/hdf5/openmpi"
   "/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi"
   "/usr/lib/x86_64-linux-gnu/openmpi/include"
   )
@@ -31,6 +33,7 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/data/Projet-GLCS-2020-2021/build/heatlib/CMakeFiles/heatlib.dir/DependInfo.cmake"
   "/data/Projet-GLCS-2020-2021/build/simpleui/CMakeFiles/simpleui.dir/DependInfo.cmake"
   "/data/Projet-GLCS-2020-2021/build/programoptions/CMakeFiles/programoptions.dir/DependInfo.cmake"
+  "/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/hdf5data.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

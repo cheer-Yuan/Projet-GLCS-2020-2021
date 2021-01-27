@@ -240,6 +240,19 @@ programoptions/fast:
 	$(MAKE) $(MAKESILENT) -f programoptions/CMakeFiles/programoptions.dir/build.make programoptions/CMakeFiles/programoptions.dir/build
 .PHONY : programoptions/fast
 
+#=============================================================================
+# Target rules for targets named hdf5data
+
+# Build rule for target.
+hdf5data: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 hdf5data
+.PHONY : hdf5data
+
+# fast build rule for target.
+hdf5data/fast:
+	$(MAKE) $(MAKESILENT) -f hdf5data/CMakeFiles/hdf5data.dir/build.make hdf5data/CMakeFiles/hdf5data.dir/build
+.PHONY : hdf5data/fast
+
 simpleheat.o: simpleheat.cpp.o
 
 .PHONY : simpleheat.o
@@ -280,6 +293,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... baselib"
+	@echo "... hdf5data"
 	@echo "... heatlib"
 	@echo "... programoptions"
 	@echo "... simpleheat"
