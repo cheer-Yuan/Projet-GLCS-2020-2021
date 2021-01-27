@@ -21,7 +21,7 @@ using std::chrono::milliseconds;
 
 /***************************** HDF5 ****************************/
 
-void hdf5data::hdf5_store( const Distributed2DField& data )
+void hdf5data::simulation_updated( const Distributed2DField& data )
 {
 
         const string file_name = "my_file.h5";
