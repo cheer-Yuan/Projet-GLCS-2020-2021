@@ -3,6 +3,7 @@
 #include <iostream>
 #include <thread>
 
+
 // the implemented class (last)
 #include "screenprinter.hpp"
 
@@ -51,3 +52,4 @@ void ScreenPrinter::simulation_updated( const Distributed2DField& data )
 	MPI_Barrier(data.distribution().communicator());
 	sleep_for(milliseconds(1));
 }
+
