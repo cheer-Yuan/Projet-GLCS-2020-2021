@@ -12,7 +12,7 @@ add_subdirectory(baselib)
 add_subdirectory(heatlib)
 add_subdirectory(simpleui)
 add_subdirectory(programoptions)
-#add_subdirectory(hdf5data)
+add_subdirectory(hdf5data)
 
 add_executable(simpleheat
 		simpleheat.cpp
@@ -27,7 +27,7 @@ target_link_libraries(simpleheat PRIVATE
 		GLCS2020_project::heatlib
 		GLCS2020_project::simpleui
 		GLCS2020_project::programoptions
-		#GLCS2020_project::hdf5data
+		GLCS2020_project::hdf5data
  
 		MPI::MPI_CXX
 		hdf5::hdf5

@@ -14,6 +14,6 @@ class hdf5data
 {
 public:
     // see overriden function
-    void simulation_updated( const Distributed2DField& data ) override;
+    void hdf5_store( const Distributed2DField& data ) override;
     
 };

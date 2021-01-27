@@ -6,6 +6,7 @@
 #include "simulation.hpp"
 #include "screenprinter.hpp"
 #include "programoptionsconfig.hpp"
+#include "hdf5data.hpp"
 
 int main( int argc, char* argv[] )
 {
@@ -26,8 +27,11 @@ int main( int argc, char* argv[] )
 	// construct the simulation runner
 	Simulation simulation( MPI_COMM_WORLD, config, heat_solver, init );
 	// Add a printer to screen to observe the simulation
-	ScreenPrinter printer;
-	simulation.observe( printer );
+	//ScreenPrinter printer;
+	//simulation.observe( printer );
+
+	hdf5data store;
+	simulation.observe(store);
 
 	// run the simulation
 	simulation.run();
