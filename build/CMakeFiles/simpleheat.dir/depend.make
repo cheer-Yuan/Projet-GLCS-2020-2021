@@ -11,6 +11,7 @@ CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../baselib/include/simulationobserve
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../baselib/include/timestep.hpp
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../heatlib/include/finitediffheatsolver.hpp
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../heatlib/include/fixedconditions.hpp
+CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../programoptions/include/programoptionsconfig.hpp
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../simpleui/include/commandlineconfig.hpp
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../simpleui/include/screenprinter.hpp
 CMakeFiles/simpleheat.dir/simpleheat.cpp.o: ../vendor/mdspan/include/experimental/__p0009_bits/accessor_basic.hpp

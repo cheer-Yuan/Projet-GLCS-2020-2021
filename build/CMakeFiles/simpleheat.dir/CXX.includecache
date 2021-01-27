@@ -70,6 +70,12 @@ timestep.hpp
 initialconditionner.hpp
 -
 
+../programoptions/include/programoptionsconfig.hpp
+configuration.hpp
+../programoptions/include/configuration.hpp
+boost/program_options.hpp
+-
+
 ../simpleui/include/commandlineconfig.hpp
 configuration.hpp
 -
@@ -309,6 +315,8 @@ simulation.hpp
 /data/Projet-GLCS-2020-2021/simulation.hpp
 screenprinter.hpp
 /data/Projet-GLCS-2020-2021/screenprinter.hpp
+programoptionsconfig.hpp
+/data/Projet-GLCS-2020-2021/programoptionsconfig.hpp
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h
 stddef.h

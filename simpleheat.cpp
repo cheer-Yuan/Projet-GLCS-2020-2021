@@ -5,14 +5,20 @@
 #include "fixedconditions.hpp"
 #include "simulation.hpp"
 #include "screenprinter.hpp"
+#include "programoptionsconfig.hpp"
 
 int main( int argc, char* argv[] )
 {
 	// initialize the MPI library
 	MPI_Init( &argc, &argv );
 
+/*
 	// Construct the command-line arguments parser
 	CommandLineConfig config( argc, argv );
+*/
+    //use the new configuration library which reads a configuration file
+    BoostConfig config( argc, argv );
+
 	// construct the heat equation solver
 	FinitediffHeatSolver heat_solver( config );
 	// construct the initial condition setter

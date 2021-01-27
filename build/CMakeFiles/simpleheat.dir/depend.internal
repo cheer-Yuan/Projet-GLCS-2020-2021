@@ -12,6 +12,7 @@ CMakeFiles/simpleheat.dir/simpleheat.cpp.o
  ../baselib/include/timestep.hpp
  ../heatlib/include/finitediffheatsolver.hpp
  ../heatlib/include/fixedconditions.hpp
+ ../programoptions/include/programoptionsconfig.hpp
  ../simpleui/include/commandlineconfig.hpp
  ../simpleui/include/screenprinter.hpp
  ../vendor/mdspan/include/experimental/__p0009_bits/accessor_basic.hpp

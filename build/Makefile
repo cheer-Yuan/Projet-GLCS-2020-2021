@@ -227,6 +227,19 @@ simpleui/fast:
 	$(MAKE) $(MAKESILENT) -f simpleui/CMakeFiles/simpleui.dir/build.make simpleui/CMakeFiles/simpleui.dir/build
 .PHONY : simpleui/fast
 
+#=============================================================================
+# Target rules for targets named programoptions
+
+# Build rule for target.
+programoptions: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 programoptions
+.PHONY : programoptions
+
+# fast build rule for target.
+programoptions/fast:
+	$(MAKE) $(MAKESILENT) -f programoptions/CMakeFiles/programoptions.dir/build.make programoptions/CMakeFiles/programoptions.dir/build
+.PHONY : programoptions/fast
+
 simpleheat.o: simpleheat.cpp.o
 
 .PHONY : simpleheat.o
@@ -268,6 +281,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... baselib"
 	@echo "... heatlib"
+	@echo "... programoptions"
 	@echo "... simpleheat"
 	@echo "... simpleui"
 	@echo "... simpleheat.o"
