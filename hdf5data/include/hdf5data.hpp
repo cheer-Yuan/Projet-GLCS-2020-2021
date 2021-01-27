@@ -9,7 +9,7 @@
  * \warning This class is inefficient, brittle and does not guarantee the correct
  * ordering of the values printed on screen.
  */
-class ScreenPrinter
+class hdf5data
         : public SimulationObserver
 {
 public:

@@ -23,5 +23,6 @@ target_link_libraries(simpleheat PRIVATE
 		GLCS2020_project::heatlib
 		GLCS2020_project::simpleui
 		GLCS2020_project::programoptions
+		GLCS2020_project::hdf5data
 		MPI::MPI_CXX
 		${Boost_LIBRARIES})

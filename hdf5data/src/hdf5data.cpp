@@ -10,7 +10,7 @@
 
 
 // the implemented class (last)
-#include "screenprinter.hpp"
+#include "hdf5data.hpp"
 
 using std::cout;
 using std::endl;
@@ -21,7 +21,7 @@ using std::chrono::milliseconds;
 
 /***************************** HDF5 ****************************/
 
-void ScreenPrinter::simulation_updated( const Distributed2DField& data )
+void hdf5data::simulation_updated( const Distributed2DField& data )
 {
 
         const string file_name = "my_file.h5";
