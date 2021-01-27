@@ -9,6 +9,8 @@ add_subdirectory(baselib)
 add_subdirectory(heatlib)
 add_subdirectory(simpleui)
 add_subdirectory(programoptions)
+add_subdirectory(hdf5data)
+
 
 add_executable(simpleheat
 		simpleheat.cpp
