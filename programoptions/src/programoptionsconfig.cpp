@@ -2,6 +2,8 @@
 #include "iostream"
 #include "programoptionsconfig.hpp"
 
+#include <boost/program_options.hpp>
+using namespace boost;
 using namespace std;
 namespace po = boost::program_options;
 
@@ -12,9 +14,9 @@ BoostConfig::BoostConfig( const int argc, const char* const argv[] )
     po::options_description generic("General options");
     generic.add_options()
             ("help,h", "display help message");
-//        ("config", po::value<string>(&config_file)->default_value("../config.conf"), "set config file using './simpleheat @filename', default value = ../config.conf");
+    //("config", po::value<string>(&config_file)->default_value("../config.conf"), "set config file using './simpleheat @filename', default value = ../config.conf");
 
-    //declare and present the supported options, accessible by command line or configuration file
+    //declare and present the supported options, accessible by command line or by configuration file
     std::vector<int> buff_gs, buff_de;
     std::vector<double> buff_ds;
     po::options_description config("Program options");
@@ -25,7 +27,6 @@ BoostConfig::BoostConfig( const int argc, const char* const argv[] )
             ("delta_t", po::value<double>(&m_delta_t), "set the time difference between two consecutive points")
             ("delta_s", po::value< std::vector<double> >(&buff_ds)->multitoken(), "set the space difference between two consecutive points");
 
-
     po::options_description cmdline_options;
     cmdline_options.add(generic).add(config);
 
@@ -35,13 +36,7 @@ BoostConfig::BoostConfig( const int argc, const char* const argv[] )
     po::options_description visible("Allowed options");
     visible.add(generic).add(config);
 
-/*
-    std::ifstream settings_file("../config.conf");
-    po::store(po::parse_config_file(settings_file, config), vm);
-    po::notify(vm);
-*/
-
-    //add parameters to the map to store
+    //add parameters to the map to be stored
     po::variables_map vm;
 
     //print help messages
@@ -59,12 +54,19 @@ BoostConfig::BoostConfig( const int argc, const char* const argv[] )
         }
     }
 
-/*
+/** Code for MIXED input from a config file and command line is not yet supported in this version
+ * @param argc the number of command-line arguments
+ * @param argv the values of command-line arguments
+ * the function of MIXED input from a config file and command line is not yet supported in this version
+ */
+ /*
     //code abandoned
+    std::ifstream settings_file("../config.conf");
+    po::store(po::parse_config_file(settings_file, config), vm);
+    po::notify(vm);
+
     po::options_description all("All options");
     all.add(generic).add(config);
-    po::variables_map vm;
-    po::store(po::command_line_parser(argc, argv).options(all).extra_parser(::at_option_parser).run(), vm);
 
     if (vm.count("config"))
     {
@@ -74,18 +76,12 @@ BoostConfig::BoostConfig( const int argc, const char* const argv[] )
         if (! ifs_config)
         {
             cerr << "could not open the configure file" << endl;
-            return false;
         }
 
         stringstream ss_config;
         ss_config << ifs_config.rdbuf();
-
-        global::strings_t args;
-        global::separate_tokens(ss_config.str(), args, " \r\n");
-        po::store(po::command_line_parser(args).options(all).run(), vm);
     }
-    po::notify(vm);
-*/
+    po::notify(vm);*/
 
     //write data into type coor2d
     m_global_shape[DX] = buff_gs[0];

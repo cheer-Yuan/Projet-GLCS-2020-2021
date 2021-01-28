@@ -5,7 +5,7 @@
 
 /** An implementation of SimulationObserver that prints the simulation data to
  * screen.
- * 
+ *
  * \warning This class is inefficient, brittle and does not guarantee the correct
  * ordering of the values printed on screen.
  */
@@ -15,5 +15,5 @@ class hdf5data
 public:
     // see overriden function
     void simulation_updated( const Distributed2DField& data ) override;
-    
+
 };

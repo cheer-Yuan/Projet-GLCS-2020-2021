@@ -39,10 +39,3 @@
 /data/Projet-GLCS-2020-2021/build/programoptions/CMakeFiles/rebuild_cache.dir
 /data/Projet-GLCS-2020-2021/build/programoptions/CMakeFiles/edit_cache.dir
 /data/Projet-GLCS-2020-2021/build/programoptions/CMakeFiles/programoptions.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/install/strip.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/install/local.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/edit_cache.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/install.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/list_install_components.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/rebuild_cache.dir
-/data/Projet-GLCS-2020-2021/build/hdf5data/CMakeFiles/hdf5data.dir

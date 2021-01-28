@@ -29,6 +29,7 @@ public:
     /** Construct a new B
      * @param argc the number of command-line arguments
      * @param argv the values of command-line arguments
+     * the function of MIXED input from a config file and command line is not yet supported in this version
      */
     BoostConfig(const int argc, const char* const argv[]);
 
