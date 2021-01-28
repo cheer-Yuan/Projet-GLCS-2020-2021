@@ -96,8 +96,7 @@ void hdf5data::simulation_updated( const Distributed2DField& data )
 		}
 	}
     
-    // write data to HDF5!
-    H5Dwrite(dataset, H5T_NATIVE_DOUBLE, mem_space, file_space, xfer_plist, data.data());
+   
     
     H5Pclose(fapl);
     H5Pclose(xfer_plist);
