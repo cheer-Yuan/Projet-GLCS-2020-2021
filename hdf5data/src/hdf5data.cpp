@@ -22,7 +22,7 @@ using std::this_thread::sleep_for;
 using std::chrono::milliseconds;
 
 
-/***************************** HDF5 ****************************/
+/***************************** HDF5 ****************************/ 
 
 void hdf5data::simulation_updated( const Distributed2DField& data )
 {
@@ -61,6 +61,40 @@ void hdf5data::simulation_updated( const Distributed2DField& data )
     // create the data transfer property list
     const hid_t xfer_plist = H5Pcreate(H5P_DATASET_XFER);
     H5Pset_dxpl_mpio(xfer_plist, H5FD_MPIO_COLLECTIVE);
+
+    if ( data.distribution().rank() == 0 ) {
+		cout << "at t="<<data.time()<<" : [" << endl;
+	}
+	cout<<flush; 
+	MPI_Barrier(data.distribution().communicator());
+	sleep_for(milliseconds(1));
+	for ( int pyy = data.distribution().extent( DY )-1; pyy >=0 ; --pyy ) {
+		for ( int yy = data.noghost_view().extent( DY )-1; yy >=0 ; --yy ) {
+			for ( int pxx = 0; pxx < data.distribution().extent( DX ); ++pxx ) {
+				if ( data.distribution().coord( DX ) == pxx && data.distribution().coord( DY ) == pyy ) {
+					if ( pxx == 0 ) {
+						cout << "  [";
+					}
+					for ( int xx = 0; xx < data.noghost_view().extent( DX ); ++xx ) {
+						if ( 0 == data.noghost_view(yy, xx) ) {
+							cout << " .";
+						} else {
+							cout << " " << data.noghost_view(yy, xx);
+							// write data to HDF5!
+    						H5Dwrite(dataset, H5T_NATIVE_DOUBLE, mem_space, file_space, xfer_plist, data.noghost_view(yy,xx));
+
+						}
+					}
+					if ( pxx == data.distribution().extent( DX ) - 1 ) {
+						cout << " ]\n";
+					}
+				}
+				cout<<""<<flush;
+				MPI_Barrier(data.distribution().communicator());
+				sleep_for(milliseconds(1));
+			}
+		}
+	}
     
     // write data to HDF5!
     H5Dwrite(dataset, H5T_NATIVE_DOUBLE, mem_space, file_space, xfer_plist, data.data());
