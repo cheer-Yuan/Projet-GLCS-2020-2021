@@ -6,6 +6,7 @@
 #include <iostream>
 #include <thread>
 #include <string>
+#include <vector>
 
 
 
@@ -14,6 +15,8 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
+using std::string;
 using std::flush;
 using std::this_thread::sleep_for;
 using std::chrono::milliseconds;
