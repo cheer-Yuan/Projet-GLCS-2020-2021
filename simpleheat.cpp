@@ -1,17 +1,18 @@
 #include <mpi.h>
-#include<time.h>
+#include <sys/time.h>
 #include "commandlineconfig.hpp"
 #include "finitediffheatsolver.hpp"
 #include "fixedconditions.hpp"
 #include "simulation.hpp"
 #include "screenprinter.hpp"
 #include "programoptionsconfig.hpp"
-#include "hdf5data.hpp"
+//#include "hdf5data.hpp"
 
-using namespace 
+using namespace std;
 int main( int argc, char* argv[] )
 {
-    clock_t start = clock();
+    struct timeval t1, t2;
+    gettimeofday(&t1, NULL);
 	// initialize the MPI library
 	MPI_Init( &argc, &argv );
 
@@ -28,12 +29,12 @@ int main( int argc, char* argv[] )
 	FixedConditions init;
 	// construct the simulation runner
 	Simulation simulation( MPI_COMM_WORLD, config, heat_solver, init );
-	// Add a printer to screen to observe the simulation
+	//Add a printer to screen to observe the simulation
 	//ScreenPrinter printer;
 	//simulation.observe( printer );
 
-	hdf5data store;
-	simulation.observe(store);
+	//hdf5data store;
+	//simulation.observe(store);
 
 	// run the simulation
 	simulation.run();
@@ -41,9 +42,9 @@ int main( int argc, char* argv[] )
 	// finalize MPI
 	MPI_Finalize();
 
-    clock_t end = clock();
+    gettimeofday(&t2, NULL);
 
-    float t =  end - start;
-    cout << t << endl;
+    float deltaT = ((t2.tv_sec-t1.tv_sec) * 1000000 + t2.tv_usec-t1.tv_usec) / 1000;
+    cout << deltaT << endl;
 	return 0;
 }

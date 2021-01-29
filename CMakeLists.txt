@@ -24,6 +24,7 @@ add_executable(simpleheat
 )
 
 #set(CMAKE_CXX_FLAGS "-lboost_program_options" "-lhdf5")
+#set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} -O3")
 
 target_link_libraries(simpleheat PRIVATE
 		GLCS2020_project::baselib
